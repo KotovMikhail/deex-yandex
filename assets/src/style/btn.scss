@@ -1,0 +1,20 @@
+.btn {
+  box-sizing: border-box;
+  @include button-reset;
+  font-family: inherit;
+  font-size: 22px;
+  line-height: 26.4px;
+  text-align: center;
+  color: $white;
+  background-color: $green;
+  box-shadow: $box-shadow;
+  border-radius: 50px;
+  outline: none;
+  transition: 0.5s;
+
+  &:hover,
+  &:focus {
+    transition: 0.3s;
+    // background-color: $hovered-color;
+  }
+}

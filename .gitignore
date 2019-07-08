@@ -1,6 +1,6 @@
 /*
 !/build
-!/src
+!/assets
 !/.editorconfig
 !/.gitignore
 !/.gitattributes
@@ -8,3 +8,4 @@
 !/package.json
 !/package-lock.json
 !/readme.md
+!/.bowerrc
