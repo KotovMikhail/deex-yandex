@@ -1,0 +1,108 @@
+.advantages {
+  background-color: $white;
+  padding: 30px;
+  padding-bottom: 80px;
+
+  @include desktop-max {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f5fcfe;
+  }
+
+  @include mobile-max {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 32px;
+  }
+
+  &__list {
+    @include list-reset;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    position: relative;
+    width: 33.33%;
+    max-width: 406px;
+    padding-left: 100px;
+
+    @include desktop-max {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include mobile-max {
+      padding-left: 80px;
+      margin-bottom: 32px;
+    }
+
+    &::before {
+      content: "";
+      width: 91px;
+      height: 91px;
+      position: absolute;
+      left: 45px;
+      top: 50px;
+      transform: translate(-50%, -50%);
+      background-image: url("../img/iocn-lock.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 100%;
+
+      @include mobile-max {
+        left: 35px;
+        top: 23px;
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    &--second {
+      &::before {
+        background-image: url("../img/icon-save.png");
+      }
+    }
+
+    &--third {
+      &::before {
+        background-image: url("../img/icon-target.png");
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    color: $green;
+    font-size: 40px;
+    line-height: 1.2;
+
+    @include mobile-max {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+  }
+
+  &__descr {
+    font-family: $montserrat-medium;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    color: $grey;
+    font-size: 22px;
+    line-height: 1.2;
+
+    @include mobile-max {
+      font-size: 14px;
+    }
+  }
+}

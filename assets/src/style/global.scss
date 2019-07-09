@@ -54,19 +54,25 @@ img {
   width: 100%;
   height: 100%;
   max-width: 1280px;
-  padding-left: 30px;
-  padding-right: 30px;
   margin-left: auto;
   margin-right: auto;
+
+  // @include tablet-max {
+  //   padding-left: 20px;
+  //   padding-right: 20px;
+  // }
+
+  // @include mobile-max {
+  //   padding-left: 16px;
+  //   padding-right: 16px;
+  // }
+}
+
+.site-wrap {
+  background-color: $white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-  @include tablet-max {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   @include mobile-max {
-    padding-left: 16px;
-    padding-right: 16px;
+    box-shadow: none;
   }
 }

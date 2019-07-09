@@ -5,8 +5,20 @@
   display: flex;
   flex-wrap: nowrap;
   padding-top: 45px;
+  margin-bottom: 50px;
   background-color: $white;
   min-height: 840px;
+
+  @include desktop-max {
+    padding-top: 20px;
+    min-height: auto;
+    flex-wrap: wrap;
+  }
+
+  @include mobile-max {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
 
   &__logo {
     margin-bottom: 137px;
@@ -14,6 +26,13 @@
     width: 100%;
     max-width: 463px;
     height: 78px;
+
+    @include desktop-max {
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      margin-bottom: 25px;
+    }
   }
 
   &__title {
@@ -35,6 +54,26 @@
     &--comission {
       color: $green;
       display: block;
+
+      @include desktop-max {
+        display: inline;
+      }
+
+      @include desktop-max {
+        display: block;
+        line-height: 0.4;
+      }
+    }
+
+    @include desktop-max {
+      max-width: 100%;
+      font-size: 40px;
+      line-height: 1.6;
+    }
+
+    @include mobile-max {
+      margin-bottom: 25px;
+      font-size: 30px;
     }
   }
 
@@ -49,11 +88,41 @@
       width: 100%;
       max-width: 530px;
       margin-bottom: 30px;
+
+      @include desktop-max {
+        width: 100%;
+        max-width: 100%;
+
+        .header__text--separator {
+          display: none;
+        }
+      }
+
+      @include mobile-max {
+        line-height: 1.2;
+      }
     }
 
     &--bottom {
       width: 100%;
       max-width: 100%;
+
+      @include desktop-max {
+        line-height: 1.2;
+        text-align: left;
+      }
+
+      @include mobile-max {
+        text-align: left;
+      }
+    }
+
+    @include desktop-max {
+      font-size: 18px;
+    }
+
+    @include mobile-max {
+      font-size: 14px;
     }
   }
 
@@ -64,6 +133,23 @@
     z-index: 2;
     padding-top: 15px;
     padding-left: 30px;
+
+    @include desktop-max {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: static;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 25px;
+    }
+
+    @include mobile-max {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 
   &__right {
@@ -82,6 +168,27 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: cover;
+
+    @include desktop-max {
+      width: 100%;
+      height: auto;
+      position: static;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 30px;
+      padding-bottom: 25px;
+      justify-content: center;
+      background-image: url("../img/bg-full.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    @include mobile-max {
+      padding-top: 25px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 }
 
@@ -99,7 +206,16 @@
     max-width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: nowrap;
     margin-bottom: 35px;
+
+    @include mobile-max {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__reg-item {
+    align-self: flex-start;
   }
 
   &__label {
@@ -109,6 +225,15 @@
     font-family: inherit;
     line-height: 1.1;
     font-size: 22px;
+
+    @include desktop-max {
+      font-size: 16px;
+    }
+
+    @include mobile-max {
+      font-size: 12px;
+      line-height: 1.1;
+    }
   }
 
   &__input {
@@ -132,6 +257,26 @@
       max-width: calc(100% - 68px);
       border-top-right-radius: 0 0;
       border-bottom-right-radius: 0 0;
+
+      @include desktop-max {
+        max-width: calc(100% - 60px);
+      }
+
+      @include mobile-max {
+        max-width: calc(100% - 48px);
+      }
+    }
+
+    @include desktop-max {
+      font-size: 16px;
+    }
+
+    @include mobile-max {
+      padding-top: 14px;
+      padding-right: 15px;
+      padding-bottom: 14px;
+      padding-left: 15px;
+      font-size: 14px;
     }
   }
 
@@ -152,6 +297,17 @@
     border-bottom-right-radius: 50px 50px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+
+    @include desktop-max {
+      width: 60px;
+      height: 60px;
+      font-size: 16px;
+    }
+
+    @include mobile-max {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &__wrapper-confirm {
@@ -175,6 +331,11 @@
     line-height: 1.4;
     font-weight: normal;
     font-family: $montserrat-regular;
+
+    @include mobile-max {
+      padding-left: 35px;
+      font-size: 12px;
+    }
   }
 
   &__input--checkbox {
@@ -183,26 +344,19 @@
     height: 32px;
     position: absolute;
     top: 25%;
-    left: 15%;
+    left: 12.7%;
     transform: translate(-50%, -50%);
     background-image: url("../img/check-off.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100%;
-  }
 
-  &__input--checkbox {
-    margin-left: -50px;
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    top: 25%;
-    left: 15%;
-    transform: translate(-50%, -50%);
-    background-image: url("../img/check-off.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100%;
+    @include mobile-max {
+      width: 24px;
+      height: 24px;
+      top: 12px;
+      left: 60px;
+    }
   }
 
   &__input--confirm:checked + .form__input--checkbox {
@@ -224,6 +378,14 @@
     &--signup {
       color: rgba(255, 255, 255, 0.5);
     }
+
+    @include desktop-max {
+      font-size: 30px;
+    }
+
+    @include mobile-max {
+      font-size: 14px;
+    }
   }
 
   &__submit {
@@ -234,5 +396,13 @@
     max-width: 294px;
     margin: 0 auto;
     display: block;
+
+    @include mobile-max {
+      padding-top: 17px;
+      padding-bottom: 17px;
+      width: 100%;
+      max-width: 288px;
+      font-size: 12px;
+    }
   }
 }

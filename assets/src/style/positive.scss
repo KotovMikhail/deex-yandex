@@ -1,0 +1,105 @@
+.positive {
+  background-color: $white;
+  padding: 30px;
+
+  @include desktop-max {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include mobile-max {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 24px;
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 1080px;
+    margin-top: 0;
+    margin-bottom: 90px;
+    letter-spacing: 2.2px;
+    color: $grey;
+
+    @include mobile-max {
+      font-size: 18px;
+      letter-spacing: 1.2px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title-number {
+    color: $green;
+    display: inline;
+    font-weight: bolder;
+    font-size: 109%;
+    text-transform: uppercase;
+
+    @include mobile-max {
+      font-size: 18px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__list {
+    @include list-reset;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 25%;
+    max-width: 305px;
+    margin-bottom: 60px;
+
+    @include desktop-max {
+      width: 50%;
+      max-width: 100%;
+      margin-bottom: 40px;
+      padding-right: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include mobile-max {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__number {
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    font-family: $montserrat-bold;
+    font-weight: 700;
+    color: $green;
+    font-size: 22px;
+    line-height: 1.4;
+    text-decoration: underline;
+
+    @include mobile-max {
+      word-wrap: break;
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__descr {
+    font-family: $montserrat-medium;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    color: $grey;
+    font-size: 22px;
+    line-height: 1.4;
+
+    @include mobile-max {
+      word-wrap: break-word;
+      font-size: 14px;
+    }
+  }
+}
