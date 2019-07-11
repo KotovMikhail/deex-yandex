@@ -1,8 +1,8 @@
 {
-    "name": "bootstrap-4",
+    "name": "Getdeex.info",
     "version": "1.0.0",
-    "description": "Start project on Bootstrap 4",
-    "author": "itchief.ru",
+    "description": "Start project",
+    "author": "Mikhail Kotov",
     "license": "ISC",
     "devDependencies": {
         "browser-sync": "^2.18.13",
