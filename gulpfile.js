@@ -38,7 +38,7 @@ var config = {
 /* подключаем gulp и плагины */
 var gulp = require("gulp"), // подключаем Gulp
     webserver = require("browser-sync"), // сервер для работы и автоматического обновления страниц
-    plumber = require("gulp-plumber"), // модуль для отслеживания ошибок
+    plumber = require("gulp-plumber"),  // модуль для отслеживания ошибок
     rigger = require("gulp-rigger"), // модуль для импорта содержимого одного файла в другой
     sourcemaps = require("gulp-sourcemaps"), // модуль для генерации карты исходных файлов
     sass = require("gulp-sass"), // модуль для компиляции SASS (SCSS) в CSS
