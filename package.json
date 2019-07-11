@@ -1,7 +1,7 @@
 {
     "name": "bootstrap-4",
     "version": "1.0.0",
-    "description": "Start project on Bootstrap 4 - itchief.ru",
+    "description": "Start project on Bootstrap 4",
     "author": "itchief.ru",
     "license": "ISC",
     "devDependencies": {

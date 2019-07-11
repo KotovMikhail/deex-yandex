@@ -26,7 +26,7 @@
     text-align: center;
 
     @include mobile-max {
-      margin-bottom: 32px;
+      margin-bottom: 10px;
       font-size: 22px;
       line-height: 21.6px;
     }
@@ -42,8 +42,6 @@
 
   &__item {
     box-sizing: border-box;
-    padding-top: 40px;
-    padding-bottom: 30px;
     width: 25%;
     flex-grow: 1;
     display: flex;
@@ -53,14 +51,13 @@
     flex-wrap: wrap;
 
     &:hover {
-      cursor: pointer;
       border-radius: 30px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     }
 
     @include mobile-max {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 0;
+      padding-bottom: 0;
 
       &:hover {
         border-radius: 10px;
@@ -68,23 +65,35 @@
     }
   }
 
-  &__link {
-    display: block;
+  // &__link {
+  //   display: block;
+  // }
+
+  &__brand-link {
+    display:block;
+    text-align: center;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 30px;
   }
 
   &__percent {
     margin-bottom: 35px;
-    max-width: 100%;
+    max-width: 130px;
 
-    @include mobile-sm-max {
+    @include mobile-max {
       margin-bottom: 8px;
       width: 64px;
       height: auto;
     }
+
+    @include mobile-sm-max {
+      max-width: 48px;
+    }
   }
 
   &__brand {
-    @include mobile-sm-max {
+    @include mobile-max {
       max-width: 64px;
       height: auto;
     }
