@@ -1,5 +1,6 @@
 .compare {
   background-color: $white;
+  padding-top: 0;
   padding-bottom: 90px;
   padding-left: 30px;
   padding-right: 30px;
@@ -13,7 +14,7 @@
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 30px;
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
   &__title {
