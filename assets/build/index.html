@@ -21,7 +21,10 @@
             </h1>
         
             <p class="header__text header__text--top">
-              Теперь комиссия на Deex на ввод и вывод через Яндекс.Деньги - 0%. Это лучшее предложение на рынке прямо сейчас.
+              Теперь комиссия на Deex на ввод и вывод через Яндекс.Деньги - 0%.
+            </p>
+            <p class="header__text header__text--bottom">
+              Это лучшее предложение на рынке прямо сейчас.
             </p>
         
             <a class="btn btn-reg" href="#">Регистрация</a>
@@ -89,7 +92,7 @@
               <div>
             </li>
         
-            <li class="compare__item">
+            <li class="compare__item compare__item--shadow">
               <a class="compare__brand-link" href="https://deex.exchange/" target="_blank">
                 <img class="compare__percent" src="../img/icon-zero-per.png" alt="5%" width="138" height="228" />
                 <div class="compare__link"><img class="compare__brand" src="../img/icon-deex.png" alt="Deex" width="160" height="33" /></div>
@@ -119,9 +122,9 @@
           <div class="rss__wrap">
             <h2 class="rss__title visually-hidden">Узнавайте о главных новостях первыми!</h2>
         
-            <form class="form" action="" method="POST" name="form">
+            <form class="form" action="" method="post" name="form">
               <label class="form__label form__label--mail" for="mail">Узнавайте о главных новостях первыми!</label>
-              <input class="form__input" name="mail" id="mail" type="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              <input class="form__input form__input--mail" value="" name="mail" id="mail" type="mail" pattern="\S+@[a-z]+.[a-z]+"
                 placeholder="E-mail" required />
               <button class="form__submit btn" type="submit">Подписаться</button>
             </form>

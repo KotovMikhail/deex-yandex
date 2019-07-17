@@ -1,7 +1,7 @@
 .compare {
   background-color: $white;
   padding-top: 0;
-  padding-bottom: 90px;
+  padding-bottom: 70px;
   padding-left: 30px;
   padding-right: 30px;
 
@@ -13,7 +13,7 @@
   @include mobile-max {
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     padding-top: 20px;
   }
 
@@ -51,7 +51,7 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    &:hover {
+    &--shadow {
       border-radius: 30px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     }
@@ -59,10 +59,7 @@
     @include mobile-max {
       padding-top: 0;
       padding-bottom: 0;
-
-      &:hover {
-        border-radius: 10px;
-      }
+      border-radius: 10px;
     }
   }
 
@@ -71,11 +68,16 @@
   // }
 
   &__brand-link {
-    display:block;
+    display: block;
     text-align: center;
     width: 100%;
-    padding-top: 40px;
+    padding-top: 30px;
     padding-bottom: 30px;
+
+    @include mobile-max {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
   }
 
   &__percent {
@@ -89,13 +91,13 @@
     }
 
     @include mobile-sm-max {
-      max-width: 48px;
+      max-width: 44px;
     }
   }
 
   &__brand {
     @include mobile-max {
-      max-width: 64px;
+      max-width: 59px;
       height: auto;
     }
   }

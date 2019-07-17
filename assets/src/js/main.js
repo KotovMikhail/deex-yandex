@@ -11,51 +11,52 @@
 //   valueMissing: false // Отсутствует обязательное значение
 // };
 
-// var inputs = document.querySelectorAll('input:not([type="checkbox"])');
-// var btnSubmit = document.querySelector(".form__submit");
-// var btnCheck = document.querySelector(".form__input--confirm");
-// var newInput = Array.from(inputs);
-
-// function CustomValidation() {}
-
-// CustomValidation.prototype = {
-//   invalidities: [],
-
-//   checkValidity: function() {
-//     var validity = input.validity;
-//     if (validity.patternMismatch) {
-//       this.addInvalidity("This is wrong pattern for this field");
-//     }
-//   },
-
-//   addInvalidity: function(message) {
-//     this.invalidities.push(message);
-//   },
-
-//   getInvalidities: function() {
-//     return this.invalidities.join(". \n");
-//   }
-// };
-
-// btnSubmit.addEventListener("click", function(e) {
-//   e.preventDefault();
-
-//   var values = [];
-
-//   if (btnCheck.checked === false) {
-
-//   }
-
-//     for (var i = 0; i < inputs.length; i++) {
-//       var input = inputs[i];
-
-//       if(input.value === '') {
-
-//       }
-
-//       values.push(input.value);
-//     }
+var submit = document.querySelector('.form__submit');
+var email = document.querySelector('.form__input--mail');
+var form = document.querySelector('.form');
+var URL = 'https://pp.deex.exchange/verify/store_email';
 
 
-//   console.log(values);
-// });
+email.addEventListener('invalid', function (evt) {
+  if (email.validity.patternMismatch) {
+    email.setCustomValidity('Please enter a valid email address.');
+  } else if (email.validity.valueMissing) {
+    email.setCustomValidity('Required field');
+  } else {
+    email.setCustomValidity('');
+  }
+});
+
+var upload = function (data, onSucces) {
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+
+  xhr.addEventListener('load', function () {
+    if (xhr.status === 200) {
+      console.log(xhr.response);
+    } else {
+      console.log('Статус ответа: ' + xhr.status + ' ' + xhr.statusText);
+    }
+  });
+
+  xhr.addEventListener('error', function () {
+    console.log('Произошла ошибка соединения');
+  });
+
+  xhr.addEventListener('timeout', function () {
+    console.log('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
+  });
+
+  xhr.timeout = 10000; // 10s
+
+  xhr.open('POST', URL);
+  xhr.send(data);
+};
+
+form.addEventListener('submit', function (evt) {
+
+  upload(email.value, function (response) {
+    console.log(email.value)
+  });
+  evt.preventDefault();
+});

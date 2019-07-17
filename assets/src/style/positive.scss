@@ -1,6 +1,9 @@
 .positive {
   background-color: $white;
-  padding: 30px;
+  padding-top: 60px;
+  padding-right: 30px;
+  padding-bottom: 60px;
+  padding-left: 30px;
 
   @include desktop-max {
     padding-left: 20px;
@@ -8,9 +11,10 @@
   }
 
   @include mobile-max {
+    padding-top: 24px;
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 24px;
+    padding-bottom: 5px;
   }
 
   &__title {
