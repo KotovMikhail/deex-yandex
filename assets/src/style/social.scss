@@ -1,6 +1,11 @@
 .social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
   background: $linear;
-  background-image: url("../img/bg-linear.jpg");
+  background-image: url('../img/bg-linear.jpg');
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
@@ -24,54 +29,65 @@
 
   &__title {
     width: 100%;
-    max-width: 100%;
-    margin-top: 0;
-    margin-bottom: 40px;
-    font-size: 40px;
-    letter-spacing: 2.2px;
+    max-width: 304px;
+    margin: 0;
+    font-size: 22px;
+    font-family: $montserrat-regular;
+    font-weight: normal;
+    line-height: 1.1;
     color: $white;
-    text-align: center;
+    text-align: left;
+
+    @include desktop-max {
+      margin-bottom: 30px;
+    }
 
     @include mobile-max {
-      font-size: 18px;
-      letter-spacing: 1.2px;
-      margin-bottom: 30px;
+      font-size: 12px;
+      letter-spacing: 1.1px;
+      margin-bottom: 15px;
     }
   }
 
   &__list {
     @include list-reset;
     width: 100%;
-    max-width: 100%;
+    max-width: 670px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
 
     @include desktop-max {
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     @include mobile-sm-max {
+      align-items: flex-start;
       justify-content: flex-start;
     }
   }
 
   &__item {
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    max-width: 86px;
+    margin-right: 30px;
 
-    @include desktop-max {
-      max-width: 100%;
-      margin-bottom: 20px;
+    &:last-child {
+      margin-right: 0;
     }
 
-    @include mobile-sm-max {
+    // @include desktop-max {
+    //   max-width: 100%;
+    // }
+
+    @include mobile-max {
+      margin-bottom: 20px;
+      margin-right: 16px;
       width: auto;
-      min-width: 40px;
-      margin-bottom: 10px;
+      max-width: 24px;
+
+      &:nth-child(n + 8) {
+        margin-bottom: 0;
+      }
     }
   }
 }

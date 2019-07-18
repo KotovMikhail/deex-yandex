@@ -11,6 +11,7 @@
 //   valueMissing: false // Отсутствует обязательное значение
 // };
 
+
 var submit = document.querySelector('.form__submit');
 var email = document.querySelector('.form__input--mail');
 var form = document.querySelector('.form');
@@ -27,7 +28,7 @@ email.addEventListener('invalid', function (evt) {
   }
 });
 
-var upload = function (data, onSucces) {
+var upload = function (data) {
   var xhr = new XMLHttpRequest();
   xhr.responseType = 'json';
 
@@ -53,10 +54,9 @@ var upload = function (data, onSucces) {
   xhr.send(data);
 };
 
-form.addEventListener('submit', function (evt) {
 
-  upload(email.value, function (response) {
-    console.log(email.value)
-  });
+
+form.addEventListener('submit', function (evt) {
+  upload(email.value)
   evt.preventDefault();
 });

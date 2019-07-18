@@ -1,7 +1,7 @@
 .advantages {
   background-color: $white;
   padding: 30px;
-  padding-bottom: 80px;
+  padding-bottom: 55px;
 
   @include desktop-max {
     padding-left: 20px;
@@ -27,6 +27,7 @@
     position: relative;
     width: 33.33%;
     max-width: 406px;
+    padding-top: 30px;
     padding-left: 100px;
 
     @include desktop-max {
@@ -80,7 +81,7 @@
 
   &__title {
     margin: 0;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     padding: 0;
     color: $green;
     font-size: 40px;
