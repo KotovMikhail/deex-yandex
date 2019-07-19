@@ -1,5 +1,5 @@
 .footer {
-  padding-top: 20px;
+  padding-top: 15px;
   padding-right: 30px;
   padding-bottom: 20px;
   padding-left: 30px;
@@ -14,11 +14,13 @@
   }
 
   &__descr {
+    margin: 0;
     font-family: $montserrat-medium;
     font-weight: normal;
     font-size: 22px;
     line-height: 1.4;
     color: $grey;
+
 
     @include mobile-sm-max {
       font-size: 12px;

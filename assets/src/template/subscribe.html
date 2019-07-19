@@ -1,0 +1,19 @@
+<div class="modal__wrap">
+<div class=" main-subscribe-block">
+  <button type="button" class="main-subscribe-block__close close-btn"></button>
+  <div class="main-subscribe-block__title">Follow our news</div>
+  <div class="main-subscribe-block__subscribe-title">Subscribe to our newsletter</div>
+  <div class="subscribe">
+      <form class="subscribe__form js-validation-form" action="sendmail.php">
+          <div class="subscribe__input-wrapper">
+              <input type="email" class="subscribe__input form-control" name="email" placeholder="E-mail" pattern="\S+@[a-z]+.[a-z]+" required>
+              <button type="submit" class="subscribe__btn"></button>
+              <input type="hidden" name="theme" value="Follow our news">
+              <input type="hidden" name="success-mesage" value="<h3 align='center'>Thank you for your request.</h3><br>Our team will contact you shortly.">
+          </div>
+      </form>
+  </div>
+  <div class="main-subscribe-block__t">Or</div>
+  <a href="https://t.me/deexexchange" target="_blank" class="main-subscribe-block__btn btn_telegram"> Join DEEX Telegram</a>
+</div>
+</div>

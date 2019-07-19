@@ -1,21 +1,7 @@
-// input.validity = {
-//   valid: false // Поле валидно
-//   customError: false // Установленно специальное сообщение ошибки
-//   patternMismatch: false // Значение не удовлетворяет шаблону, установленному в атрибуте pattern
-//   rangeOverflow: false // Значение превосходит атрибут max
-//   rangeUnderflow: true // Значение меньше атрибута min
-//   stepMismatch: true // Значение не соответствует указаному шагу
-//   tooLong: false // Значение слишком длинное
-//   tooShort: false // Значение слишком короткое
-//   typeMismatch: false // Значение не соответствует указаному атрибуту type
-//   valueMissing: false // Отсутствует обязательное значение
-// };
-
-
 var submit = document.querySelector('.form__submit');
 var email = document.querySelector('.form__input--mail');
 var form = document.querySelector('.form');
-var URL = 'https://pp.deex.exchange/verify/store_email';
+var URL = 'http://192.168.10.50/verify/request_service_info';
 
 
 email.addEventListener('invalid', function (evt) {
@@ -28,8 +14,24 @@ email.addEventListener('invalid', function (evt) {
   }
 });
 
-var upload = function (data) {
+var data = {
+  email: '',
+  name: '',
+  lang: 'en',
+  service: 'deex_cash'
+};
+
+var upload = function (obj) {
   var xhr = new XMLHttpRequest();
+
+  var serialize = function(obj)  {
+    debugger;
+    return Object.keys(obj).reduce(function (a, k) {
+      a.push(k + "=" + encodeURIComponent(obj[k]));
+      return a;
+    }, []).join("&");
+  };
+
   xhr.responseType = 'json';
 
   xhr.addEventListener('load', function () {
@@ -48,15 +50,27 @@ var upload = function (data) {
     console.log('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
   });
 
-  xhr.timeout = 10000; // 10s
+  xhr.timeout = 10000;
 
   xhr.open('POST', URL);
-  xhr.send(data);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+  xhr.send(serialize({
+    data: JSON.stringify(obj)
+  }));
 };
 
-
-
 form.addEventListener('submit', function (evt) {
-  upload(email.value)
+
   evt.preventDefault();
+
+  data.email = email.value;
+
+  upload(data);
+
 });
+
+
+
+
+
