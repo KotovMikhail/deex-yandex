@@ -91,6 +91,7 @@
   }
 
   &__img {
+    border: none;
     @include mobile-max {
       width: 24px;
       height: 24px;

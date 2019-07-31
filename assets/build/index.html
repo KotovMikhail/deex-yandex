@@ -14,23 +14,36 @@
 <body>
   <div class="site-wrap container">
     <div class="modal__wrap">
-    <div class=" main-subscribe-block">
-      <button type="button" class="main-subscribe-block__close close-btn"></button>
-      <div class="main-subscribe-block__title">Follow our news</div>
-      <div class="main-subscribe-block__subscribe-title">Subscribe to our newsletter</div>
-      <div class="subscribe">
+      <div class=" main-subscribe-block">
+        <button type="button" class="main-subscribe-block__close close-btn"></button>
+        <div class="main-subscribe-block__title">Следите за нашими новостями</div>
+        <div class="main-subscribe-block__subscribe-title">Подписывайтесь на нашу рассылку</div>
+        <div class="subscribe">
           <form class="subscribe__form js-validation-form" action="sendmail.php">
-              <div class="subscribe__input-wrapper">
-                  <input type="email" class="subscribe__input form-control" name="email" placeholder="E-mail" pattern="\S+@[a-z]+.[a-z]+" required>
-                  <button type="submit" class="subscribe__btn"></button>
-                  <input type="hidden" name="theme" value="Follow our news">
-                  <input type="hidden" name="success-mesage" value="<h3 align='center'>Thank you for your request.</h3><br>Our team will contact you shortly.">
-              </div>
+            <div class="subscribe__input-wrapper">
+              <input type="email" class="subscribe__input form-control" name="email" placeholder="E-mail"
+                pattern="\S+@[a-z]+.[a-z]+" required>
+              <button type="submit" class="subscribe__btn"
+                onclick="yaCounter54505345.reachGoal('PUSH_TELEGRAM'); return true;"></button>
+              <input type="hidden" name="theme" value="Follow our news">
+              <input type="hidden" name="success-mesage"
+                value="<h3 align='center'>Thank you for your request.</h3><br>Our team will contact you shortly.">
+            </div>
           </form>
+        </div>
+        <div class="main-subscribe-block__t">Или</div>
+        <a href="https://t.me/deex_exchange" target="_blank" class="main-subscribe-block__btn btn_telegram"
+          onclick="yaCounter54505345.reachGoal('PUSH_TELEGRAM'); return true;">Присоединиться к DEEX в Telegram</a>
       </div>
-      <div class="main-subscribe-block__t">Or</div>
-      <a href="https://t.me/deexexchange" target="_blank" class="main-subscribe-block__btn btn_telegram"> Join DEEX Telegram</a>
     </div>
+    
+    <div class="modal__success-wrap">
+      <div class="modal__success">
+        <h3 class="modal__success-title">Спасибо за ваш запрос.</h3>
+        <p class="modal__success-text">Наша команда свяжется с вами.</p>
+        <button class="modal__success-close">
+        </button>
+      </div>
     </div>
     <header class="header">
       <div class="header__left-wrap">
@@ -230,7 +243,7 @@
         </li>
     
         <li class="social__item">
-          <a class="social__link" href="https://t.me/deexexchange" target="_blank"><img class="social__img social__img--tg" src="../img/icon-tg.svg" alt="Telegram" width="40" height="40"/></a>
+          <a class="social__link" href="https://t.me/deex_exchange" target="_blank"><img class="social__img social__img--tg" src="../img/icon-tg.svg" alt="Telegram" width="40" height="40"/></a>
         </li>
     
         <li class="social__item">
@@ -299,6 +312,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/subscribe.js"></script>
+
 
   </div>
 </body>
